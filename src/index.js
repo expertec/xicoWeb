@@ -11,6 +11,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import ProductsPage from './components/ProductsPage'; // Asegúrate de que esta línea esté agregada
 
 ReactDOM.render(
   <React.StrictMode>
@@ -26,6 +27,7 @@ ReactDOM.render(
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/prospects" element={<ProspectList />} />
             <Route path="/funnel" element={<Funnel />} />
+            <Route path="/products" element={<ProductsPage />} /> {/* Agregar esta línea */}
           </Route>
         </Routes>
       </Router>

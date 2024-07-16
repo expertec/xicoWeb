@@ -1,25 +1,24 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import DashboardLayout from './components/DashboardLayout';
 import Login from './components/Login';
-import Register from './components/Register';
-import Dashboard from './components/Dashboard';
-import ProtectedRoute from './components/ProtectedRoute';
+import ProspectsPage from './components/ProspectsPage';
+import FunnelPage from './components/FunnelPage';
+import ProductsPage from './components/ProductsPage'; // Asegúrate de importar este componente
 
 function App() {
   return (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route
-        path="/dashboard"
-        element={
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        }
-      />
-      <Route path="/" element={<Navigate to="/login" />} />
-    </Routes>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<DashboardLayout />}>
+          <Route path="dashboard" element={<h1>Dashboard</h1>} />
+          <Route path="prospects" element={<ProspectsPage />} />
+          <Route path="funnel" element={<FunnelPage />} />
+          <Route path="products" element={<ProductsPage />} /> {/* Añade esta línea */}
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

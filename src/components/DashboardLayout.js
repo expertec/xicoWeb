@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
-import { HomeIcon, UsersIcon, ChartBarIcon, CogIcon, PlusIcon, UserAddIcon } from '@heroicons/react/outline';
+import { HomeIcon, UsersIcon, ChartBarIcon, CogIcon, PlusIcon, UserAddIcon, CubeIcon } from '@heroicons/react/outline';
 import { getAuth } from 'firebase/auth';
 import '../index.css';
 import ProspectModal from './ProspectModal';
@@ -72,6 +72,12 @@ const DashboardLayout = () => {
               <Link to="/funnel" className="flex items-center">
                 <ChartBarIcon className="h-5 w-5 mr-2" />
                 Embudo
+              </Link>
+            </li>
+            <li className="p-4 hover:bg-gray-700">
+              <Link to="/products" className="flex items-center">
+                <CubeIcon className="h-5 w-5 mr-2" />
+                Productos
               </Link>
             </li>
           </ul>
